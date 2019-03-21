@@ -1,6 +1,6 @@
 # ohno
 
-Experiment in re-creating the 0hn0 game in re-frame. See [http://0hn0.com/]
+Experiment in re-creating the 0hn0 game in re-frame. See [http://0hn0.com/]http://0hn0.com/
 
 ## Development Mode
 
