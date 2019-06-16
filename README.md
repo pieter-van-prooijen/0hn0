@@ -1,6 +1,6 @@
 # ohno
 
-A [re-frame](https://github.com/Day8/re-frame) application designed to ... well, that part is up to you.
+Experiment in re-creating the 0hn0 game in re-frame. See [http://0hn0.com/](http://0hn0.com/)
 
 ## Development Mode
 
