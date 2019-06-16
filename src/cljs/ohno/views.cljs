@@ -11,7 +11,7 @@
 (defn get-color [color]
   (cond
     (number? color) "blue"
-    true (name color)))
+    :else (name color)))
 
 (defn piece [x y width height color error]
   (let [grid-size (/ 1000 width)
@@ -46,17 +46,20 @@
       nil
       [:h2.title (if success? "Success!" "Failure!")])))
 
-(defn new-button [size]
-  [:a.button {:href "#" :on-click (fn [_] (>evt [::events/generate-board size]))}
+(defn new-button [size current-size]
+  [:a.button {:class (when (= size current-size) "is-active")
+              :href "#"
+              :on-click (fn [_] (>evt [::events/generate-board size]))}
    (str size " x " size)])
 
 (defn new-buttons []
-  (map (fn [size] [new-button size]) (range 3 8)))
+  (let [current-size (<sub [::subs/width])]
+    (map (fn [size] [new-button size current-size]) (range 3 8))))
 
 (defn main-panel []
   [:div.container
    [:h1.title "0hn0"]
-   [:div
+   [:div.buttons
     (into [:<>] (new-buttons))]
    [success]
    [board]])
